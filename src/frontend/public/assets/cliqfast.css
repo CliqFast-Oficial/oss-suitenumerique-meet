@@ -26,4 +26,5 @@
   --colors-primary-dark-700: #67dcbc;
   --colors-primary-dark-action: #7fe6c8;
 }
-.Header-logo { max-height: 34px !important; margin-top: 4px !important; }
+.Header-logo { height: 38px !important; max-height: none !important; width: auto !important; margin-top: 2px !important; }
+@media (max-width: 640px) { .Header-logo { height: 30px !important; } }
