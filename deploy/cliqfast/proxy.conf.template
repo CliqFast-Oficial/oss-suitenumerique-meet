@@ -47,6 +47,11 @@ server {
         try_files $uri @proxy_to_meet_backend;
     }
 
+    # API externa (aba Reuniões da CliqGestão cria as salas por aqui).
+    location /external-api {
+        try_files $uri @proxy_to_meet_backend;
+    }
+
     location /static {
         try_files $uri @proxy_to_meet_backend;
     }
