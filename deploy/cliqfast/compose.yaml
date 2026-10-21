@@ -1,13 +1,15 @@
-# Reunião CliqFast (Meet) no servidor da casa.
-# - reuniao.cliqfast.com.br chega pelo túnel do Cloudflare (cliqfast-sandbox) em 127.0.0.1:8095.
-# - Vídeo pelo LiveKit Cloud (sem LiveKit aqui) e login pelo Cloudflare Access (OIDC).
-# - Segredos em ~/sandbox/meet/config/.env, fora do código; banco no volume meet-db.
-# Na pasta do projeto, no notebook: sandbox up | sandbox rebuild | sandbox logs | sandbox status
+# Reunião CliqFast (Meet) na VPS da CliqGestão.
+# - reuniao.cliqfast.com.br chega pelo Caddy da CliqGestão (HTTPS automático, DNS direto para a VPS): o proxy daqui entra
+#   na rede dela (MEET_EDGE_NETWORK, padrão cliqgestao_default) com o nome "meet-proxy".
+# - Vídeo pelo LiveKit Cloud (sem LiveKit aqui) e login pelo Google, só para a equipe da CliqGestão.
+# - Segredos em /opt/meet/config/.env, fora do código; banco no volume meet-db, cópia diária em meet-backups.
+# Do notebook, na pasta do fork: deploy/cliqfast/publicar.sh (prévia) | publicar.sh --apply | status | logs
 services:
   postgresql:
     image: postgres:16
     restart: unless-stopped
     env_file: [../../../config/.env]
+    mem_limit: 384m
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
       interval: 2s
@@ -19,6 +21,7 @@ services:
   redis:
     image: redis:7-alpine
     restart: unless-stopped
+    mem_limit: 96m
 
   backend:
     build:
@@ -30,6 +33,7 @@ services:
     image: cliqfast/meet-backend:local
     restart: unless-stopped
     env_file: [../../../config/.env]
+    mem_limit: 640m
     healthcheck:
       test: ["CMD", "python", "manage.py", "check"]
       interval: 15s
@@ -52,23 +56,49 @@ services:
         VITE_APP_TITLE: "Reunião CliqFast"
     image: cliqfast/meet-frontend:local
     restart: unless-stopped
+    mem_limit: 96m
 
   # Mesmo papel do default.conf.template do projeto: /api, /admin e /static no backend, o resto no front.
   proxy:
     image: nginxinc/nginx-unprivileged:1.30.4-alpine3.24
     restart: unless-stopped
+    mem_limit: 64m
     environment:
       BACKEND_INTERNAL_HOST: backend
       FRONTEND_INTERNAL_HOST: frontend
     volumes:
       - ./proxy.conf.template:/etc/nginx/templates/default.conf.template:ro
-    ports:
-      - "127.0.0.1:8095:8083"
+    networks:
+      default: {}
+      edge:
+        aliases: [meet-proxy]
     depends_on:
       backend:
         condition: service_healthy
       frontend:
         condition: service_started
 
+  # pg_dump diário (BACKUP_HOUR, UTC) guardando os últimos BACKUP_KEEP_DAYS dias no volume meet-backups.
+  backup:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    mem_limit: 64m
+    entrypoint: ["sh", "/opt/bin/backup.sh"]
+    env_file: [../../../config/.env]
+    environment:
+      PGHOST: postgresql
+    volumes:
+      - ./bin:/opt/bin:ro
+      - meet-backups:/backups
+    depends_on:
+      postgresql:
+        condition: service_healthy
+
+networks:
+  edge:
+    external: true
+    name: ${MEET_EDGE_NETWORK:-cliqgestao_default}
+
 volumes:
   meet-db:
+  meet-backups:
