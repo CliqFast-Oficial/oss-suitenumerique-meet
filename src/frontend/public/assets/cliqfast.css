@@ -1,6 +1,11 @@
-/* Reunião CliqFast: cores da marca sobre os tokens do Meet (FRONTEND_CUSTOM_CSS_URL=/assets/cliqfast.css).
-   Azul-marinho #012461 é a estrutura e a ação principal; verde #01bd8c é o "vai" (confirmação, destaque). */
+/* Reunião CliqFast: o visual do site da CliqFast sobre os tokens do Meet (FRONTEND_CUSTOM_CSS_URL=/assets/cliqfast.css).
+   Sora nos títulos, Onest no texto, azul-marinho #012461 na estrutura e na ação, verde-menta no destaque, cantos de 10 px. */
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap');
+
 :root {
+  --fonts-sans: 'Onest', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --radii-4: .625rem;
+  --radii-6: .75rem;
   --colors-primary: #012461;
   --colors-primary-hover: #001a4a;
   --colors-primary-active: #001236;
@@ -26,5 +31,31 @@
   --colors-primary-dark-700: #67dcbc;
   --colors-primary-dark-action: #7fe6c8;
 }
+body { font-family: var(--fonts-sans); }
+h1, h2, h3 { font-family: 'Sora', var(--fonts-sans); letter-spacing: -.02em; }
+
+/* Páginas claras (início, entrar na reunião, avisos): fundo e título como no site da CliqFast. */
+div.bg-c_white:has(> main) {
+  background:
+    radial-gradient(48rem 28rem at 88% 8%, rgba(99, 226, 187, .22), transparent 62%),
+    linear-gradient(180deg, #eef3ff 0%, #ffffff 58%) !important;
+}
+div.bg-c_white:has(> main) h1 { color: #012461; font-weight: 700; }
+div.bg-c_white:has(> main) h1 + p, div.bg-c_white:has(> main) h1 + div { color: #46536b; }
+/* Etiqueta verde antes do título, como "Plataforma de loja virtual" no site. */
+div.bg-c_white:has(> main) main h1:first-of-type::before {
+  content: 'Reunião CliqFast';
+  display: block;
+  width: fit-content;
+  margin: 0 auto .9rem;
+  padding: .3rem .7rem;
+  border-radius: 6px;
+  background: #e6f9f2;
+  color: #01916b;
+  font: 600 .8rem/1.2 'Onest', sans-serif;
+  letter-spacing: .02em;
+}
+@media (min-width: 1024px) { div.bg-c_white:has(> main) main h1:first-of-type::before { margin-left: 0; } }
+
 .Header-logo { height: 38px !important; max-height: none !important; width: auto !important; margin-top: 2px !important; }
 @media (max-width: 640px) { .Header-logo { height: 30px !important; } }
