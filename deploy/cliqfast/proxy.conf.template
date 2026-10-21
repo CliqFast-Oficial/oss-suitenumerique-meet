@@ -31,6 +31,16 @@ server {
         proxy_pass $meet_frontend;
     }
 
+    # Arquivos da marca sem hash no nome (CSS da casa, logo, ilustrações): validade curta, para o Cloudflare não segurar
+    # a versão antiga por 30 dias depois de uma troca.
+    location ~ ^/(assets/(cliqfast\.css|logo-cliqfast\.png|intro-slider/)|favicon|apple-touch-icon|android-chrome|acesso-negado\.html) {
+        proxy_set_header Host $http_host;
+        proxy_hide_header Cache-Control;
+        proxy_hide_header Expires;
+        add_header Cache-Control "public, max-age=300" always;
+        proxy_pass $meet_frontend;
+    }
+
     location / {
         try_files $uri @proxy_to_meet_frontend;
     }
