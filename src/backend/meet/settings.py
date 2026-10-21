@@ -648,6 +648,9 @@ class Base(Configuration):
     OIDC_REDIRECT_FIELD_NAME = values.Value(
         "returnTo", environ_name="OIDC_REDIRECT_FIELD_NAME", environ_prefix=None
     )
+    # Equipe da CliqGestão: só ela entra com conta; admin lá é admin aqui (core/cliqgestao.py).
+    CLIQGESTAO_TEAM_URL = values.Value(None, environ_name="CLIQGESTAO_TEAM_URL", environ_prefix=None)
+    CLIQGESTAO_TEAM_TOKEN = values.Value(None, environ_name="CLIQGESTAO_TEAM_TOKEN", environ_prefix=None)
     OIDC_USERINFO_FULLNAME_FIELDS = values.ListValue(
         default=["given_name", "usual_name"],
         environ_name="OIDC_USERINFO_FULLNAME_FIELDS",

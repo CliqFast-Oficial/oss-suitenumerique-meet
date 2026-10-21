@@ -1,0 +1,29 @@
+/* Reunião CliqFast: cores da marca sobre os tokens do Meet (FRONTEND_CUSTOM_CSS_URL=/assets/cliqfast.css).
+   Azul-marinho #012461 é a estrutura e a ação principal; verde #01bd8c é o "vai" (confirmação, destaque). */
+:root {
+  --colors-primary: #012461;
+  --colors-primary-hover: #001a4a;
+  --colors-primary-active: #001236;
+  --colors-primary-text: #ffffff;
+  --colors-primary-warm: #92b4fd;
+  --colors-primary-subtle: #e8eefb;
+  --colors-primary-subtle-text: #012461;
+  --colors-primary-50: #f3f6fd;
+  --colors-primary-100: #e8eefb;
+  --colors-primary-200: #cddbf7;
+  --colors-primary-300: #9db6ee;
+  --colors-primary-400: #5e8bfa;
+  --colors-primary-500: #2d5cc9;
+  --colors-primary-600: #173f96;
+  --colors-primary-700: #0b2f78;
+  --colors-primary-800: #012461;
+  --colors-primary-900: #011b4a;
+  --colors-primary-950: #011236;
+  --colors-primary-action: #01bd8c;
+  /* Dentro da sala (tema escuro): botões ativos e destaques em verde da marca. */
+  --colors-primary-dark-500: #01bd8c;
+  --colors-primary-dark-600: #34cfa5;
+  --colors-primary-dark-700: #67dcbc;
+  --colors-primary-dark-action: #7fe6c8;
+}
+.Header-logo { max-height: 34px !important; margin-top: 4px !important; }

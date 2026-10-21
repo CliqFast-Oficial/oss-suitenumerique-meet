@@ -1,5 +1,7 @@
 """Authentication Backends for the Meet core app."""
 
+import logging
+
 from django.conf import settings
 from django.core.exceptions import (
     SuspiciousOperation,
@@ -13,8 +15,11 @@ from lasuite.oidc_login.backends import (
 )
 from rest_framework.authentication import SessionAuthentication
 
+from core import cliqgestao
 from core.models import User
 from core.validators import sub_validator
+
+logger = logging.getLogger(__name__)
 
 
 class OIDCAuthenticationBackend(LaSuiteOIDCAuthenticationBackend):
@@ -23,6 +28,24 @@ class OIDCAuthenticationBackend(LaSuiteOIDCAuthenticationBackend):
     This class overrides the default OIDC Authentication Backend to accommodate differences
     in the User and Identity models, and handles signed and/or encrypted UserInfo response.
     """
+
+    def authenticate(self, request, **kwargs):
+        """Quem não é da equipe da CliqGestão volta como login recusado (não como erro 400)."""
+        try:
+            return super().authenticate(request, **kwargs)
+        except cliqgestao.NotInTeam as error:
+            logger.warning("Login recusado: %s não é da equipe da CliqGestão", error)
+            return None
+
+    def verify_claims(self, claims):
+        """Além das claims essenciais: e-mail verificado e da equipe ativa da CliqGestão."""
+        if not super().verify_claims(claims):
+            return False
+        if cliqgestao.enabled():
+            if claims.get("email_verified") is False:
+                raise cliqgestao.NotInTeam(claims.get("email") or "")
+            cliqgestao.check(claims.get("email"))
+        return True
 
     def get_extra_claims(self, user_info):
         """
@@ -55,6 +78,12 @@ class OIDCAuthenticationBackend(LaSuiteOIDCAuthenticationBackend):
 
         """
         email = claims["email"]
+        if cliqgestao.enabled():
+            # Admin na CliqGestão é admin aqui (painel /admin); muda junto quando a função muda lá.
+            admin = cliqgestao.team().get((email or "").lower(), False)
+            if user.is_staff != admin or user.is_superuser != admin:
+                user.is_staff = user.is_superuser = admin
+                user.save(update_fields=["is_staff", "is_superuser"])
         if is_new_user and email and settings.SIGNUP_NEW_USER_TO_MARKETING_EMAIL:
             self.signup_to_marketing_email(email)
 
