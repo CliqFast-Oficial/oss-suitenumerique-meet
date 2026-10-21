@@ -1,0 +1,34 @@
+{
+  "accessibility": {
+    "title": "Acessibilidade",
+    "introduction": "A <i>Reunião CliqFast</i> busca tornar seus serviços digitais acessíveis a todas as pessoas.",
+    "declaration": {
+      "title": "Declaração de acessibilidade",
+      "date": "Publicada em outubro de 2026."
+    },
+    "scope": "Esta declaração de acessibilidade vale para o site reuniao.cliqfast.com.br",
+    "complianceStatus": {
+      "title": "Situação de conformidade",
+      "body": "O site ainda não passou por auditoria de acessibilidade. Mesmo assim, a equipe segue as boas práticas de acessibilidade para que ele possa ser usado por todas as pessoas."
+    },
+    "improvement": {
+      "title": "Melhorias e contato",
+      "body": "Se você não conseguir acessar algum conteúdo ou serviço, fale com a equipe da CliqFast para receber uma alternativa acessível ou o conteúdo em outro formato.",
+      "contact": {
+        "email": "E-mail: contato@cliqfast.com.br",
+        "address": "Site: cliqfast.com.br"
+      },
+      "response": "Procuramos responder em até 2 dias úteis."
+    },
+    "recourse": {
+      "title": "Outros canais",
+      "introduction": "Use estes caminhos se você relatou um problema de acessibilidade que impede o acesso a um conteúdo ou serviço e não recebeu uma resposta satisfatória.",
+      "options": {
+        "intro": "Você pode:",
+        "option1": "Escrever para contato@cliqfast.com.br pedindo a revisão do atendimento",
+        "option2": "Pedir o retorno por telefone ou videochamada, se preferir",
+        "option3": "Registrar a reclamação nos canais oficiais de defesa do consumidor, como o consumidor.gov.br"
+      }
+    }
+  }
+}

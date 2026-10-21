@@ -1,0 +1,72 @@
+{
+  "defaultName": "Um participante",
+  "joined": {
+    "description": "{{name}} entrou na sala"
+  },
+  "raised": {
+    "description": "{{name}} levantou a mão.",
+    "cta": "Abrir a fila"
+  },
+  "muted": "{{name}} desativou o seu microfone. Ninguém está ouvindo você.",
+  "openChat": "Abrir o chat",
+  "chatMessageReceived": "{{name}} disse: {{message}}",
+  "lowerHand": {
+    "auto": "Parece que você começou a falar, então sua mão vai ser abaixada.",
+    "dismiss": "Manter a mão levantada"
+  },
+  "autoMuteLargeRoom": {
+    "auto": "Você entrou em uma reunião grande. Seu microfone foi desativado automaticamente.",
+    "dismiss": "Ativar o microfone"
+  },
+  "reaction": {
+    "description": "{{name}} reagiu com {{emoji}}"
+  },
+  "permissionsRemoved": {
+    "camera": "O anfitrião desativou o vídeo de todos os participantes.",
+    "microphone": "O anfitrião desativou o microfone de todos os participantes.",
+    "screen_share": "O anfitrião desativou o compartilhamento de tela de todos os participantes."
+  },
+  "waitingParticipants": {
+    "one": "Uma pessoa quer entrar nesta chamada.",
+    "several": "Algumas pessoas querem entrar nesta chamada.",
+    "open": "Abrir",
+    "accept": "Aceitar"
+  },
+  "transcript": {
+    "waitingForTracks": "A transcrição está esperando um microfone. Ative o seu microfone para a transcrição começar.",
+    "started": "{{name}} iniciou a transcrição da reunião.",
+    "stopped": "{{name}} parou a transcrição da reunião.",
+    "limitReached": "A transcrição passou da duração máxima permitida e vai ser salva automaticamente.",
+    "failed": "A transcrição parou de forma inesperada e não pôde ser salva.",
+    "aborted": "Não foi possível iniciar a transcrição.",
+    "requested": "{{name}} quer iniciar a transcrição da reunião."
+  },
+  "screenRecording": {
+    "waitingForTracks": "A gravação está esperando áudio ou vídeo. Ative o microfone ou a câmera, ou compartilhe a tela, para a gravação começar.",
+    "started": "{{name}} iniciou a gravação da reunião.",
+    "stopped": "{{name}} parou a gravação da reunião.",
+    "limitReached": "A gravação passou da duração máxima permitida e vai ser salva automaticamente.",
+    "failed": "A gravação parou de forma inesperada e não pôde ser salva.",
+    "aborted": "Não foi possível iniciar a gravação.",
+    "requested": "{{name}} quer iniciar a gravação da reunião."
+  },
+  "recordingSave": {
+    "transcript": {
+      "message": "Sua gravação está sendo salva! Vamos mandar a transcrição para <strong>{{email}}</strong> assim que ela ficar pronta.",
+      "default": "Sua gravação está sendo salva! Vamos mandar a transcrição para o seu e-mail assim que ela ficar pronta."
+    },
+    "screenRecording": {
+      "message": "Sua gravação está sendo salva! Vamos avisar em <strong>{{email}}</strong> assim que ela ficar pronta.",
+      "default": "Sua gravação está sendo salva! Vamos avisar no seu e-mail assim que ela ficar pronta."
+    }
+  },
+  "roleChanged": {
+    "body": "Sua função mudou. Agora você é {{role}}.",
+    "roles": {
+      "owner": "anfitrião",
+      "administrator": "coanfitrião",
+      "member": "participante"
+    }
+  },
+  "openMenu": "Abrir o menu"
+}

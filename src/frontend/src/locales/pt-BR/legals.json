@@ -1,0 +1,37 @@
+{
+  "title": "Aviso legal",
+  "creator": {
+    "title": "Responsável",
+    "body": "O serviço Reunião CliqFast é oferecido pela CliqFast. Contato:",
+    "contact": {
+      "title": "Informações de contato",
+      "address": "Site: cliqfast.com.br",
+      "city": "Atendimento on-line",
+      "phone": "E-mail: contato@cliqfast.com.br",
+      "siret": "Uso interno da equipe e reuniões com clientes e parceiros",
+      "siren": "Dados cadastrais completos: solicite pelo e-mail acima"
+    }
+  },
+  "director": {
+    "title": "Responsável pela publicação",
+    "body": "A publicação é de responsabilidade da equipe da CliqFast."
+  },
+  "hosting": {
+    "title": "Hospedagem",
+    "body": "O site e os dados das reuniões ficam em servidor próprio da CliqFast. O áudio e o vídeo das chamadas passam pelo LiveKit Cloud."
+  },
+  "accessibility": {
+    "title": "Acessibilidade",
+    "body": "A conformidade com os padrões de acessibilidade digital é um objetivo. O site ainda não passou por auditoria, mas a equipe segue as boas práticas para que ele possa ser usado por todas as pessoas.",
+    "more": "Para saber mais: ",
+    "link": "página de acessibilidade",
+    "status": "Acessibilidade: não auditada"
+  },
+  "reuse": {
+    "title": "Código aberto e links",
+    "body1": "O código deste serviço é aberto, derivado do projeto Meet (La Suite numérique), e distribuído sob a ",
+    "license": "licença MIT",
+    "body2": "Você pode reproduzir, copiar, modificar e distribuir o código, desde que mantenha o aviso de copyright e o texto da licença.",
+    "body3": "Qualquer site, público ou privado, pode criar links para este serviço sem autorização prévia."
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "account": {
+    "currentlyLoggedAs": "Você está conectado como <0>{{user}}</0>",
+    "heading": "Conta",
+    "youAreNotLoggedIn": "Você não está conectado.",
+    "nameLabel": "Seu nome",
+    "authentication": "Autenticação",
+    "nameError": "O nome não pode ficar vazio"
+  },
+  "preferences": {
+    "title": "Preferências",
+    "idleDisconnectModal": {
+      "label": "Sair de chamadas sem participantes",
+      "description": "Sai da chamada automaticamente depois de alguns minutos se ninguém mais entrar"
+    },
+    "autoMuteLargeRoom": {
+      "label": "Desativar meu microfone automaticamente",
+      "description": "Desativa o microfone ao entrar em uma reunião grande."
+    }
+  },
+  "audio": {
+    "microphone": {
+      "heading": "Microfone",
+      "label": "Escolha a entrada de áudio",
+      "disabled": "Microfone desativado"
+    },
+    "noiseReduction": {
+      "label": "Otimização avançada de voz",
+      "heading": "Filtros de áudio",
+      "ariaLabel": {
+        "enable": "Ativar a redução de ruído",
+        "disable": "Desativar a redução de ruído"
+      }
+    },
+    "speakers": {
+      "heading": "Alto-falantes",
+      "label": "Escolha a saída de áudio",
+      "test": "Testar",
+      "ongoingTest": "Testando o som…",
+      "safariWarning": "A escolha de alto-falante ainda não funciona no Safari por limitação do navegador."
+    },
+    "permissionsRequired": "Permissões necessárias"
+  },
+  "video": {
+    "camera": {
+      "heading": "Câmera",
+      "label": "Escolha a entrada de vídeo",
+      "disabled": "Câmera desativada",
+      "previewAriaLabel": {
+        "enabled": "Prévia de vídeo ativada",
+        "disabled": "Prévia de vídeo desativada"
+      }
+    },
+    "resolution": {
+      "heading": "Resolução",
+      "publish": {
+        "label": "Resolução de envio (máx.)",
+        "items": {
+          "veryHigh": "Altíssima definição",
+          "high": "Alta definição",
+          "medium": "Definição padrão",
+          "low": "Baixa definição"
+        }
+      },
+      "subscribe": {
+        "label": "Resolução de recebimento (máx.)",
+        "items": {
+          "high": "Alta definição (automática)",
+          "medium": "Definição padrão",
+          "low": "Baixa definição"
+        }
+      }
+    },
+    "permissionsRequired": "Permissões necessárias"
+  },
+  "transcription": {
+    "heading": "Transcrição",
+    "language": {
+      "label": "Idioma da reunião",
+      "options": {
+        "french": "Francês (fr)",
+        "english": "Inglês (en)",
+        "dutch": "Holandês (nl)",
+        "german": "Alemão (de)",
+        "auto": "Automático"
+      }
+    }
+  },
+  "notifications": {
+    "heading": "Notificações sonoras",
+    "label": "notificações sonoras para",
+    "actions": {
+      "disable": "Desativar",
+      "enable": "Ativar"
+    },
+    "items": {
+      "participantJoined": {
+        "label": "Participante entrou"
+      },
+      "handRaised": {
+        "label": "Mão levantada"
+      },
+      "messageReceived": {
+        "label": "Mensagem recebida"
+      },
+      "participantWaiting": {
+        "label": "Participante esperando"
+      }
+    }
+  },
+  "shortcuts": {
+    "listLabel": "Atalhos de teclado",
+    "columnAction": "Ação",
+    "columnShortcut": "Atalho"
+  },
+  "dialog": {
+    "heading": "Configurações"
+  },
+  "language": {
+    "heading": "Idioma",
+    "label": "Idioma"
+  },
+  "settingsButtonLabel": "Configurações",
+  "accessibility": {
+    "announceReactions": {
+      "label": "Anunciar as reações em voz alta"
+    },
+    "font": {
+      "label": "Fonte da interface",
+      "description": "Escolha a fonte da interface para ler com mais conforto.",
+      "options": {
+        "default": "Padrão",
+        "lexend": "Lexend (leitura mais fácil)",
+        "atkinson-hyperlegible": "Atkinson Hyperlegible (baixa visão)",
+        "opendyslexic": "OpenDyslexic (dislexia)"
+      }
+    },
+    "captions": {
+      "heading": "Legendas",
+      "textSize": {
+        "label": "Tamanho do texto das legendas",
+        "options": {
+          "small": "Pequeno",
+          "medium": "Médio",
+          "large": "Grande"
+        }
+      },
+      "fontColor": {
+        "label": "Cor do texto",
+        "options": {
+          "default": "Padrão",
+          "white": "Branco",
+          "black": "Preto",
+          "blue": "Azul",
+          "green": "Verde",
+          "red": "Vermelho",
+          "yellow": "Amarelo",
+          "cyan": "Ciano",
+          "magenta": "Magenta"
+        }
+      },
+      "backgroundColor": {
+        "label": "Cor de fundo",
+        "options": {
+          "default": "Padrão",
+          "white": "Branco",
+          "black": "Preto",
+          "blue": "Azul",
+          "green": "Verde",
+          "red": "Vermelho",
+          "yellow": "Amarelo",
+          "cyan": "Ciano",
+          "magenta": "Magenta"
+        }
+      }
+    }
+  },
+  "tabs": {
+    "account": "Perfil",
+    "audio": "Áudio",
+    "video": "Vídeo",
+    "general": "Geral",
+    "notifications": "Notificações",
+    "accessibility": "Acessibilidade",
+    "transcription": "Transcrição",
+    "shortcuts": "Atalhos",
+    "rooms": "Salas"
+  },
+  "roomDefaults": {
+    "heading": "Padrões das salas",
+    "description": "Escolha as configurações aplicadas por padrão às novas salas que você criar. Dá para mudar em cada reunião nas configurações do anfitrião."
+  }
+}

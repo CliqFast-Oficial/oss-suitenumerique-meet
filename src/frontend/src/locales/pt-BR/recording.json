@@ -1,0 +1,28 @@
+{
+  "error": {
+    "title": "Gravação indisponível",
+    "body": "A gravação não está disponível ou pode ter sido apagada. Só o anfitrião da reunião tem acesso a ela. Fale com ele se precisar."
+  },
+  "expired": {
+    "title": "Gravação expirada",
+    "body": "Esta gravação foi apagada em {{date}}."
+  },
+  "authentication": {
+    "title": "É preciso entrar",
+    "body": "Entre com a sua conta para acessar esta gravação."
+  },
+  "unsaved": {
+    "title": "Download indisponível",
+    "body": "Esta gravação ainda não está pronta para baixar. Tente de novo mais tarde."
+  },
+  "success": {
+    "title": "Sua gravação está pronta!",
+    "body": "Gravação da reunião {{room}} de {{created_at}}.",
+    "expiration": "Atenção: esta gravação expira em {{expiration_days}} dia(s).",
+    "button": "Baixar",
+    "warning": {
+      "title": "Compartilhamento por link desativado",
+      "body": "Ainda não é possível compartilhar a gravação por link. Só os anfitriões podem baixá-la."
+    }
+  }
+}

@@ -57,7 +57,9 @@ export const useHumanizeDuration = () => {
         return fallbackFormat(duration, i18n.language)
 
       return humanizeDuration(duration, {
-        language: i18n.language,
+        // humanize-duration usa o código curto (pt, en, fr…).
+        language: i18n.language.split('-')[0],
+        fallbacks: ['en'],
         delimiter: ' ',
         ...(round !== undefined && { round }),
         ...(largest !== undefined && { largest }),

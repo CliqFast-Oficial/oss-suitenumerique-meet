@@ -1,0 +1,18 @@
+{
+  "createMeeting": {
+    "createButton": "Criar",
+    "joinButton": "Entrar com a Reunião CliqFast",
+    "copyLinkTooltip": "Copiar link",
+    "resetLabel": "Recomeçar",
+    "participantLimit": "Até 150 participantes.",
+    "popupBlocked": "A janela foi bloqueada. Permita janelas pop-up para este site.",
+    "settingsTooltip": "Configurações da reunião"
+  },
+  "roomSettings": {
+    "title": "Configurações da reunião",
+    "description": "Configure a reunião {{roomSlug}}.",
+    "notAllowed": "Você não tem permissão para mudar as configurações desta reunião.",
+    "error": "Não foi possível carregar as configurações da reunião.",
+    "closeButton": "Fechar"
+  }
+}

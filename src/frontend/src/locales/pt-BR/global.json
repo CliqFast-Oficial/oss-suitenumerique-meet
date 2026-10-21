@@ -1,0 +1,62 @@
+{
+  "backToHome": "Voltar para o início",
+  "cancel": "Cancelar",
+  "closeDialog": "Fechar janela",
+  "error": {
+    "heading": "Ocorreu um erro ao carregar a página"
+  },
+  "feedback": {
+    "context": "Sua opinião ajuda a melhorar o produto!",
+    "cta": "Enviar sua opinião - nova aba"
+  },
+  "forbidden": {
+    "heading": "Você não tem permissão para ver esta página"
+  },
+  "loading": "Carregando…",
+  "loggedInUserTooltip": "Conectado como ",
+  "login": {
+    "buttonLabel": "Entrar",
+    "proconnectButtonLabel": "Entrar com ProConnect",
+    "proconnectLinkLabel": "O que é o ProConnect? - nova aba",
+    "proconnectLink": "O que é o ProConnect?"
+  },
+  "logout": "Sair",
+  "notFound": {
+    "heading": "Confira o código da reunião",
+    "body": "Verifique se o código da reunião no endereço está correto. Exemplo:"
+  },
+  "selected": "selecionado",
+  "submit": "OK",
+  "footer": {
+    "links": {
+      "legifrance": "legifrance.gouv.fr",
+      "infogouv": "info.gouv.fr",
+      "servicepublic": "service-public.fr",
+      "datagouv": "data.gouv.fr",
+      "legalsTerms": "Aviso legal",
+      "data": "Dados pessoais e cookies",
+      "accessibility": "Acessibilidade: não auditada",
+      "connectionTest": "Teste sua configuração",
+      "ariaLabel": "nova janela",
+      "codeAnnotation": "Nosso código é aberto e está disponível neste",
+      "code": "Repositório de código aberto",
+      "technicalDetails": "Aviso técnico",
+      "termsOfService": "Termos de uso"
+    },
+    "mentions": "Salvo indicação em contrário, o conteúdo deste site está disponível sob a",
+    "license": "licença MIT"
+  },
+  "loginHint": {
+    "title": "Entre com a sua conta",
+    "body": "Em vez de esperar, entre com a sua conta.",
+    "button": {
+      "ariaLabel": "Fechar a sugestão",
+      "label": "OK"
+    }
+  },
+  "skipLink": "Pular para o conteúdo principal",
+  "clipboardContent": {
+    "url": "Para entrar na videochamada, clique neste link: {{roomUrl}}",
+    "numberAndPin": "Para entrar por telefone, ligue para {{phoneNumber}} e digite este código: {{pinCode}}"
+  }
+}

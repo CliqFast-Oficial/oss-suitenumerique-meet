@@ -1,0 +1,130 @@
+{
+  "title": "Termos de uso da Reunião CliqFast",
+  "articles": {
+    "article1": {
+      "title": "1. Abrangência",
+      "content": "Este documento define os termos de uso da Reunião CliqFast (daqui em diante “Reunião CliqFast” ou “o aplicativo”), um aplicativo de videochamadas usado pela equipe da CliqFast em reuniões internas e com clientes, parceiros e fornecedores."
+    },
+    "article2": {
+      "title": "2. Finalidade do aplicativo",
+      "content": "A Reunião CliqFast facilita a colaboração da equipe, o trabalho remoto e a organização de reuniões, apresentações e treinamentos.",
+      "paragraphs": [
+        "A Reunião CliqFast é operada pela CliqFast, a partir do projeto de código aberto Meet (La Suite numérique).",
+        "O aplicativo é disponibilizado pela CliqFast à sua equipe e às pessoas que ela convida, como clientes, parceiros e fornecedores.",
+        "Todo uso da Reunião CliqFast deve seguir estes termos de uso."
+      ]
+    },
+    "article3": {
+      "title": "3. Definições",
+      "paragraphs": [
+        "A Reunião CliqFast é o produto cujo uso é descrito nestes termos, disponível em https://reuniao.cliqfast.com.br.",
+        "Usuários são todas as pessoas que usam a Reunião CliqFast para se comunicar por vídeo, sejam da equipe da CliqFast ou convidadas por ela.",
+        "Organizadores são os usuários responsáveis por uma sala de reunião, depois de entrar com a conta da equipe.",
+        "A CliqFast é a responsável por disponibilizar e operar o aplicativo."
+      ]
+    },
+    "article4": {
+      "title": "4. Acesso ao serviço",
+      "definition": "A Reunião CliqFast é disponibilizada à equipe da CliqFast. Os organizadores podem compartilhar o link de uma sala com qualquer pessoa, sob sua responsabilidade."
+    },
+    "article5": {
+      "title": "5. Recursos",
+      "sections": {
+        "section1": {
+          "title": "5.1. Recursos dos organizadores",
+          "content": "A Reunião CliqFast permite que a equipe crie uma sala de videochamada a partir do navegador, com a conta da equipe.",
+          "paragraph1": "Depois, o organizador pode compartilhar o link da reunião com outras pessoas, de dentro ou de fora da empresa.",
+          "paragraph2": "Para isso, cada organizador pode:",
+          "capabilities": [
+            "Proteger o acesso à sala com uma sala de espera;",
+            "Autorizar a entrada de cada pessoa na sala;",
+            "Desativar o microfone e a câmera dos participantes;",
+            "Tirar uma pessoa da sala;",
+            "Usar a transcrição da reunião, quando disponível, depois de obter o consentimento dos participantes, sob sua responsabilidade."
+          ],
+          "paragraph3": "Em reuniões com informações confidenciais, combine com os participantes os cuidados necessários antes de começar.",
+          "paragraph4": "A transcrição automática, quando disponível, é ativada pelo organizador no menu da sala. O organizador é responsável por obter o consentimento de quem participa da reunião transcrita. O idioma da transcrição pode ser mudado no mesmo menu."
+        },
+        "section2": {
+          "title": "5.2. Recursos dos usuários",
+          "content": "A Reunião CliqFast permite que qualquer pessoa convidada por um organizador participe da sala e use os seus recursos.",
+          "paragraph": "Para isso, cada usuário pode:",
+          "capabilities": [
+            "Informar um nome ao entrar na sala;",
+            "Conversar por áudio e/ou vídeo;",
+            "Compartilhar a tela;",
+            "Trocar mensagens no chat da sala com todos os participantes;",
+            "Ver as informações técnicas da sala e os recursos de acessibilidade;",
+            "Ativar ou desativar a câmera e/ou o microfone a qualquer momento;",
+            "Proteger a privacidade do ambiente com a câmera ligada, escolhendo um fundo antes de entrar na sala ou durante a chamada."
+          ]
+        }
+      }
+    },
+    "article6": {
+      "title": "6. Compromissos e responsabilidades dos usuários",
+      "sections": {
+        "section1": {
+          "title": "6.1 Usos permitidos",
+          "paragraphs": [
+            "A Reunião CliqFast existe para facilitar conversas profissionais entre a equipe da CliqFast e as pessoas que ela convida.",
+            "Cada usuário é responsável pelas imagens e sons que deixa acessíveis na sala, tanto pelo que a câmera e o microfone transmitem quanto pelo que o seu dispositivo mostra. Use o aplicativo em um ambiente adequado e não exponha informações confidenciais a terceiros (por exemplo: use fones de ouvido e cuide do que aparece na tela).",
+            "Cada usuário é responsável pelo que escreve no chat da sala e deve enviar só mensagens adequadas."
+          ]
+        },
+        "section2": {
+          "title": "6.2 Usos proibidos",
+          "paragraphs": [
+            "Os usuários se comprometem a não enviar no chat, nem mostrar por imagem ou som, conteúdos ou informações que violem as leis e normas em vigor."
+          ]
+        }
+      }
+    },
+    "article7": {
+      "title": "7. Compromissos e responsabilidades da CliqFast",
+      "sections": {
+        "section1": {
+          "title": "7.1. Segurança do aplicativo",
+          "paragraphs": [
+            "A CliqFast adota medidas para proteger a Reunião CliqFast e a confidencialidade das conversas.",
+            "O código do aplicativo é aberto e pode ser auditado por qualquer pessoa."
+          ]
+        },
+        "section2": {
+          "title": "7.2. Acesso ao aplicativo",
+          "paragraphs": [
+            "A CliqFast faz o possível para manter o aplicativo disponível.",
+            "O aplicativo pode ficar fora do ar durante manutenções.",
+            "A disponibilidade não é garantida: o serviço é oferecido como está.",
+            "Para manutenção do ambiente, a CliqFast pode suspender o aplicativo temporariamente. Sempre que possível, os usuários são avisados com antecedência. Em emergências, a suspensão pode acontecer sem aviso.",
+            "Essas paradas podem ser necessárias, por exemplo, para atualizações, cuidados com os dados ou mudanças de infraestrutura.",
+            "A indisponibilidade do aplicativo não dá direito a nenhum tipo de compensação."
+          ]
+        },
+        "section3": {
+          "title": "7.3. Suporte",
+          "paragraphs": [
+            "A CliqFast oferece suporte aos usuários, só sobre o funcionamento técnico do aplicativo.",
+            "O suporte atende pelo e-mail contato@cliqfast.com.br.",
+            "Procuramos responder em até dois dias úteis; o prazo pode variar conforme a complexidade e o volume de pedidos."
+          ]
+        },
+        "section4": {
+          "title": "7.4. Acompanhamento do uso",
+          "paragraphs": [
+            "A CliqFast pode suspender ou excluir o acesso de quem descumprir estes termos de uso, sem prejuízo de outras medidas cabíveis.",
+            "A suspensão ou exclusão de um ou mais acessos não gera nenhum tipo de compensação."
+          ]
+        },
+        "section5": {
+          "title": "7.5. Código aberto e licenças",
+          "content": "O código do serviço é aberto, derivado do projeto Meet (https://github.com/suitenumerique/meet), e distribuído sob a licença MIT. Logotipos e imagens podem ter licenças próprias."
+        }
+      }
+    },
+    "article8": {
+      "title": "8. Mudanças nos termos de uso",
+      "content": "Estes termos de uso podem ser mudados ou complementados a qualquer momento, sem aviso, por causa de mudanças no serviço, na legislação ou por qualquer outro motivo necessário.\nAs mudanças valem para todos os usuários, que devem consultar esta seção de tempos em tempos para conhecer os termos atuais."
+    }
+  }
+}

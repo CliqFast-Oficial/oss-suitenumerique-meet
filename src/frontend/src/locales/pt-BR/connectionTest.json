@@ -1,0 +1,62 @@
+{
+  "title": "Teste sua configuração",
+  "runTest": "Iniciar teste",
+  "runAgain": "Testar de novo",
+  "cancel": "Cancelar",
+  "detailsFor": "Detalhes de {{step}}",
+  "downloadReport": "Baixar relatório",
+  "homeLink": "Teste sua configuração",
+  "progress": "{{done}}/{{total}}",
+  "progressLabel": "Progresso do teste de conexão",
+  "groups": {
+    "local": "Navegador e dispositivos",
+    "network": "Conexão com o servidor"
+  },
+  "steps": {
+    "browser": "Navegador",
+    "microphone": "Microfone",
+    "camera": "Câmera",
+    "devices": "Dispositivos de mídia",
+    "websocket": "WebSocket",
+    "webrtc": "WebRTC",
+    "turn": "TURN",
+    "reconnect": "Reconexão",
+    "selectedCandidate": "Rota escolhida",
+    "publishAudio": "Envio de áudio",
+    "publishVideo": "Envio de vídeo"
+  },
+  "status": {
+    "pending": "Aguardando",
+    "running": "Testando…",
+    "success": "Aprovado",
+    "warning": "Não ideal",
+    "failed": "Falhou",
+    "skipped": "Pulado"
+  },
+  "counts": {
+    "passed": "aprovados",
+    "warnings": "não ideais",
+    "failed": "com falha",
+    "skipped": "pulados"
+  },
+  "summary": {
+    "idle": "Pronto para testar",
+    "idleHint": "O teste leva cerca de um minuto. A câmera e o microfone só são usados enquanto ele roda.",
+    "running": "Testando…",
+    "runningHint": "Deixe esta página aberta até todas as verificações terminarem.",
+    "passed": "Tudo funcionando",
+    "passedHint": "Seu navegador, seus dispositivos e sua rede estão prontos para uma reunião.",
+    "partial": "Teste parcial",
+    "partialHint": "Algumas verificações foram puladas. Permita o acesso à câmera e ao microfone para testá-las.",
+    "warning": "Conexão abaixo do ideal",
+    "warningHint": "Você consegue entrar nas reuniões, mas a qualidade de vídeo e áudio pode cair por causa das configurações da sua rede. A equipe de TI pode melhorar isso.",
+    "warningDocLink": "Requisitos de rede para a equipe de TI",
+    "warningDocLinkAriaLabel": "Abrir os requisitos de rede para a equipe de TI - abre em nova janela",
+    "failed_one": "{{count}} verificação falhou",
+    "failed_other": "{{count}} verificações falharam",
+    "failedHint": "Abra as verificações com falha abaixo para ver os detalhes e envie o relatório para a equipe de TI."
+  },
+  "help": {
+    "firewall": "Se os testes de rede falharem, confira as permissões do navegador e as regras de filtragem da rede (WebRTC, WebSocket, TURN) com a equipe de TI."
+  }
+}
