@@ -304,6 +304,10 @@
         "party-popper": "festa",
         "folded-hands": "mãos juntas"
       }
+    },
+    "notes": {
+      "start": "Anotar a reunião",
+      "stop": "Parar de anotar"
     }
   },
   "pictureInPicture": {
@@ -825,5 +829,12 @@
   },
   "participantTile": {
     "screenShare": "Tela de {{name}}"
+  },
+  "notesBanner": {
+    "on": "Anotando a reunião · ligado por {{name}}",
+    "someone": "alguém da equipe",
+    "stop": "Parar",
+    "sent": "Anotações encerradas: a ata chega na CliqGestão e por e-mail em alguns minutos.",
+    "error": "Não foi possível mudar as anotações agora. Tente de novo."
   }
 }

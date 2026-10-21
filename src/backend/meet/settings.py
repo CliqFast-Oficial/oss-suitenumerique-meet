@@ -649,8 +649,12 @@ class Base(Configuration):
         "returnTo", environ_name="OIDC_REDIRECT_FIELD_NAME", environ_prefix=None
     )
     # Equipe da CliqGestão: só ela entra com conta; admin lá é admin aqui (core/cliqgestao.py).
-    CLIQGESTAO_TEAM_URL = values.Value(None, environ_name="CLIQGESTAO_TEAM_URL", environ_prefix=None)
-    CLIQGESTAO_TEAM_TOKEN = values.Value(None, environ_name="CLIQGESTAO_TEAM_TOKEN", environ_prefix=None)
+    CLIQGESTAO_TEAM_URL = values.Value(
+        None, environ_name="CLIQGESTAO_TEAM_URL", environ_prefix=None
+    )
+    CLIQGESTAO_TEAM_TOKEN = values.Value(
+        None, environ_name="CLIQGESTAO_TEAM_TOKEN", environ_prefix=None
+    )
     OIDC_USERINFO_FULLNAME_FIELDS = values.ListValue(
         default=["given_name", "usual_name"],
         environ_name="OIDC_USERINFO_FULLNAME_FIELDS",
@@ -1046,6 +1050,16 @@ class Base(Configuration):
     ROOM_SUBTITLE_AGENT_NAME = values.Value(
         "multi-user-transcriber",
         environ_name="ROOM_SUBTITLE_AGENT_NAME",
+        environ_prefix=None,
+    )
+
+    # Anotações da reunião (Reunião CliqFast): o anotador manda as falas para a CliqGestão
+    NOTES_ENABLED = values.BooleanValue(
+        False, environ_name="NOTES_ENABLED", environ_prefix=None
+    )
+    NOTES_AGENT_NAME = values.Value(
+        "anotador-cliqfast",
+        environ_name="NOTES_AGENT_NAME",
         environ_prefix=None,
     )
 

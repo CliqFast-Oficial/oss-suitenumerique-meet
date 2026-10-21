@@ -6,13 +6,17 @@ import { Screen } from '@/layout/Screen'
 import { UserAware } from '@/features/auth/components/UserAware'
 import { useUser } from '@/features/auth/api/useUser'
 import { JoinMeetingDialog } from '../components/JoinMeetingDialog'
-import { IntroSlider } from '../components/IntroSlider'
-import { MoreLink } from '../components/MoreLink'
+import { CallPreview } from '../components/CallPreview'
+import {
+  RiLinksLine,
+  RiQuillPenLine,
+  RiShieldCheckLine,
+} from '@remixicon/react'
 import { CreateMeetingMenu } from '../components/CreateMeetingMenu'
 import { CreateUnregisteredMeetingButton } from '../components/CreateUnregisteredMeetingButton'
-import { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 
-import { css } from '@/styled-system/css'
+import { css, cx } from '@/styled-system/css'
 import { useConfig } from '@/api/useConfig'
 import { LoginButton } from '@/components/LoginButton'
 import { LoadingScreen } from '@/components/LoadingScreen'
@@ -33,10 +37,6 @@ const Columns = ({ children }: { children?: ReactNode }) => {
         width: 'calc(100% - 2rem)',
         _motionReduce: {
           opacity: 1,
-        },
-        _motionSafe: {
-          opacity: 0,
-          animation: '.5s ease-in fade 0s forwards',
         },
         lg: {
           flexDirection: 'row',
@@ -88,7 +88,7 @@ const RightColumn = ({ children }: { children?: ReactNode }) => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        overflow: 'hidden',
+        overflow: 'visible',
         padding: '1rem 3%',
         marginBottom: 'auto',
         flexBasis: 'auto',
@@ -106,16 +106,6 @@ const RightColumn = ({ children }: { children?: ReactNode }) => {
   )
 }
 
-const Separator = styled('div', {
-  base: {
-    borderBottom: '1px solid',
-    borderColor: 'greyscale.500',
-    marginTop: '2.5rem',
-    maxWidth: '30rem',
-    width: '100%',
-  },
-})
-
 const Heading = styled('h1', {
   base: {
     fontWeight: '700',
@@ -130,6 +120,63 @@ const Heading = styled('h1', {
       fontSize: '3rem',
       lineHeight: '3.2rem',
     },
+  },
+})
+
+// Reunião CliqFast: etiqueta antes do título, palavra de destaque e entrada escalonada (cada bloco sobe um pouco).
+const riseClass = css({
+  _motionSafe: {
+    opacity: 0,
+    animation:
+      'cfRise 560ms cubic-bezier(0.23, 1, 0.32, 1) var(--cf-delay, 0ms) forwards',
+  },
+})
+const rise = (delay: number) => ({
+  className: riseClass,
+  style: { '--cf-delay': `${delay}ms` } as React.CSSProperties,
+})
+
+const Eyebrow = styled('span', {
+  base: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    padding: '0.3rem 0.75rem',
+    borderRadius: '999px',
+    background: 'mint.50',
+    color: 'mint.700',
+    fontSize: '0.8rem',
+    fontWeight: 600,
+    marginBottom: '1rem',
+    border: '1px solid',
+    borderColor: 'mint.100',
+  },
+})
+
+const Accent = styled('span', {
+  base: {
+    display: 'block',
+    background: 'linear-gradient(90deg, #009672 0%, #01bd8c 55%, #2dcd9f 100%)',
+    backgroundClip: 'text',
+    color: 'transparent',
+  },
+})
+
+const Feature = styled('li', {
+  base: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    padding: '0.45rem 0.8rem',
+    borderRadius: '12px',
+    background: 'white',
+    border: '1px solid',
+    borderColor: 'primary.100',
+    boxShadow: 'sm',
+    color: 'primary.800',
+    fontSize: '0.875rem',
+    fontWeight: 500,
+    '& svg': { color: 'mint.600', flexShrink: 0 },
   },
 })
 
@@ -183,16 +230,35 @@ const Home = () => {
       <Screen>
         <Columns>
           <LeftColumn>
-            <Heading>{t('heading')}</Heading>
-            <IntroText>{t('intro')}</IntroText>
+            <Eyebrow {...rise(0)}>
+              <span
+                aria-hidden="true"
+                className={css({
+                  width: '7px',
+                  height: '7px',
+                  borderRadius: '50%',
+                  background: 'mint.500',
+                  _motionSafe: { animation: 'cfPulse 1.8s ease-out infinite' },
+                })}
+              />
+              {t('eyebrow')}
+            </Eyebrow>
+            <Heading {...rise(60)}>
+              {t('heading')} <Accent>{t('headingAccent')}</Accent>
+            </Heading>
+            <IntroText {...rise(120)}>{t('intro')}</IntroText>
             <div
-              className={css({
-                display: 'flex',
-                gap: 0.5,
-                flexDirection: { base: 'column', xsm: 'row' },
-                flexWrap: 'wrap',
-                alignItems: { base: 'center', xsm: 'items-start' },
-              })}
+              style={rise(180).style}
+              className={cx(
+                riseClass,
+                css({
+                  display: 'flex',
+                  gap: 0.5,
+                  flexDirection: { base: 'column', xsm: 'row' },
+                  flexWrap: 'wrap',
+                  alignItems: { base: 'center', xsm: 'items-start' },
+                })
+              )}
             >
               {isLoggedIn ? (
                 <CreateMeetingMenu />
@@ -219,11 +285,35 @@ const Home = () => {
                 <JoinMeetingDialog />
               </DialogTrigger>
             </div>
-            <Separator />
-            <MoreLink />
+            <ul
+              style={rise(260).style}
+              className={cx(
+                riseClass,
+                css({
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '0.5rem',
+                  marginTop: '2rem',
+                  justifyContent: { base: 'center', lg: 'flex-start' },
+                })
+              )}
+            >
+              <Feature>
+                <RiLinksLine size={18} aria-hidden="true" />
+                {t('features.link')}
+              </Feature>
+              <Feature>
+                <RiQuillPenLine size={18} aria-hidden="true" />
+                {t('features.notes')}
+              </Feature>
+              <Feature>
+                <RiShieldCheckLine size={18} aria-hidden="true" />
+                {t('features.secure')}
+              </Feature>
+            </ul>
           </LeftColumn>
           <RightColumn>
-            <IntroSlider />
+            <CallPreview />
           </RightColumn>
         </Columns>
       </Screen>

@@ -1,6 +1,7 @@
 import type { Participant } from 'livekit-client'
 
-const DEFAULT_COLOR = 'rgb(87, 44, 216)'
+// Reunião CliqFast: sem cor própria (convidado), o azul da marca.
+const DEFAULT_COLOR = 'rgb(29, 54, 216)'
 
 const HSL_REGEX =
   /^hsl\(([0-9]|[1-9][0-9]|[1-2][0-9][0-9]|3[0-5][0-9]|360),\s*([5-7][0-9]|50|75)%,\s*([2-5][0-9]|60)%\)$/

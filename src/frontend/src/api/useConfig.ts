@@ -47,6 +47,9 @@ export interface ApiConfig {
   subtitle: {
     enabled: boolean
   }
+  notes?: {
+    enabled: boolean
+  }
   diagnostics: {
     connection_test_enabled?: boolean
   }

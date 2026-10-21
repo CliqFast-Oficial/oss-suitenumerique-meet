@@ -1,61 +1,38 @@
-/* Reunião CliqFast: o visual do site da CliqFast sobre os tokens do Meet (FRONTEND_CUSTOM_CSS_URL=/assets/cliqfast.css).
-   Sora nos títulos, Onest no texto, azul-marinho #012461 na estrutura e na ação, verde-menta no destaque, cantos de 10 px. */
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap');
+/* Reunião CliqFast: o que o tema do Panda (panda.config.ts) não alcança. Cores, fontes e cantos moram lá; aqui ficam o
+   fundo das páginas claras, a etiqueta antes do título da entrada, a logo e os quadros dos participantes dentro da sala.
+   Carregado por FRONTEND_CUSTOM_CSS_URL=/assets/cliqfast.css (validade curta no proxy). */
 
-:root {
-  --fonts-sans: 'Onest', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --radii-4: .625rem;
-  --radii-6: .75rem;
-  --colors-primary: #012461;
-  --colors-primary-hover: #001a4a;
-  --colors-primary-active: #001236;
-  --colors-primary-text: #ffffff;
-  --colors-primary-warm: #92b4fd;
-  --colors-primary-subtle: #e8eefb;
-  --colors-primary-subtle-text: #012461;
-  --colors-primary-50: #f3f6fd;
-  --colors-primary-100: #e8eefb;
-  --colors-primary-200: #cddbf7;
-  --colors-primary-300: #9db6ee;
-  --colors-primary-400: #5e8bfa;
-  --colors-primary-500: #2d5cc9;
-  --colors-primary-600: #173f96;
-  --colors-primary-700: #0b2f78;
-  --colors-primary-800: #012461;
-  --colors-primary-900: #011b4a;
-  --colors-primary-950: #011236;
-  --colors-primary-action: #01bd8c;
-  /* Dentro da sala (tema escuro): botões ativos e destaques em verde da marca. */
-  --colors-primary-dark-500: #01bd8c;
-  --colors-primary-dark-600: #34cfa5;
-  --colors-primary-dark-700: #67dcbc;
-  --colors-primary-dark-action: #7fe6c8;
-}
-body { font-family: var(--fonts-sans); }
-h1, h2, h3 { font-family: 'Sora', var(--fonts-sans); letter-spacing: -.02em; }
+h1, h2, h3 { font-family: 'Sora Variable', 'Onest Variable', sans-serif; letter-spacing: -.02em; }
 
-/* Páginas claras (início, entrar na reunião, avisos): fundo e título como no site da CliqFast. */
+/* Páginas claras (início, entrar na reunião, avisos): fundo como no site da CliqFast. */
 div.bg-c_white:has(> main) {
   background:
     radial-gradient(48rem 28rem at 88% 8%, rgba(99, 226, 187, .22), transparent 62%),
+    radial-gradient(40rem 30rem at 0% 100%, rgba(59, 102, 246, .08), transparent 60%),
     linear-gradient(180deg, #eef3ff 0%, #ffffff 58%) !important;
 }
 div.bg-c_white:has(> main) h1 { color: #012461; font-weight: 700; }
 div.bg-c_white:has(> main) h1 + p, div.bg-c_white:has(> main) h1 + div { color: #46536b; }
-/* Etiqueta verde antes do título, como "Plataforma de loja virtual" no site. */
-div.bg-c_white:has(> main) main h1:first-of-type::before {
+/* Etiqueta verde antes do título da entrada (a página inicial tem a dela, com a palavra de destaque no título). */
+div.bg-c_white:has(> main) main h1:first-of-type:not(:has(span))::before {
   content: 'Reunião CliqFast';
   display: block;
   width: fit-content;
   margin: 0 auto .9rem;
-  padding: .3rem .7rem;
-  border-radius: 6px;
-  background: #e6f9f2;
-  color: #01916b;
-  font: 600 .8rem/1.2 'Onest', sans-serif;
+  padding: .3rem .75rem;
+  border-radius: 999px;
+  border: 1px solid #cff9e8;
+  background: #ebfdf6;
+  color: #00785e;
+  font: 600 .8rem/1.2 'Onest Variable', sans-serif;
   letter-spacing: .02em;
 }
-@media (min-width: 1024px) { div.bg-c_white:has(> main) main h1:first-of-type::before { margin-left: 0; } }
+@media (min-width: 1024px) { div.bg-c_white:has(> main) main h1:first-of-type:not(:has(span))::before { margin-left: 0; } }
 
 .Header-logo { height: 38px !important; max-height: none !important; width: auto !important; margin-top: 2px !important; }
 @media (max-width: 640px) { .Header-logo { height: 30px !important; } }
+
+/* Dentro da sala: quadros arredondados e borda verde em quem está falando. */
+.lk-participant-tile { border-radius: 18px !important; overflow: hidden; transition: box-shadow .2s ease; }
+.lk-participant-tile[data-lk-speaking="true"] { box-shadow: inset 0 0 0 2px #2dcd9f, 0 0 0 1px rgba(45, 205, 159, .35); }
+@media (prefers-reduced-motion: reduce) { .lk-participant-tile { transition: none; } }

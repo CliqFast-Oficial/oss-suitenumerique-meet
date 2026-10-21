@@ -1,4 +1,5 @@
 import { isWeb } from '@livekit/components-core'
+import { NotesBanner } from '@/features/notes/components/NotesBanner'
 import { MediaDeviceFailure, Track } from 'livekit-client'
 import { getMediaDeviceFailure } from '../utils/mediaPermissions'
 import React, { useState } from 'react'
@@ -153,6 +154,7 @@ export function VideoConference({ ...props }: VideoConferenceProps) {
         )}
         <RoomAudioRenderer />
         <ConnectionStateToast />
+        <NotesBanner />
         <RecordingProvider />
         <SettingsDialogProvider />
         <MuteAlertDialogProvider />

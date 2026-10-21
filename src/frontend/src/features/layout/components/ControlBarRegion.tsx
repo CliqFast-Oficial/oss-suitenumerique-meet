@@ -5,15 +5,25 @@ const controlBarRegion = cva({
   base: {
     display: 'flex',
     alignItems: 'center',
-    flex: '1 1 33%',
+    flex: '0 0 auto',
     justifyContent: 'center',
-    gap: '0.65rem',
+    gap: '0.5rem',
+    // Reunião CliqFast: os controles numa pílula translúcida sobre o marinho.
+    padding: '0.5rem 0.625rem',
+    borderRadius: '20px',
+    background: 'rgba(255, 255, 255, 0.04)',
+    border: '1px solid rgba(255, 255, 255, 0.07)',
+    boxShadow: '0 18px 40px -20px rgba(0, 0, 0, 0.7)',
+    backdropFilter: 'blur(10px)',
   },
   variants: {
     mobile: {
       true: {
         justifyContent: 'center',
         width: '100%',
+        flex: '1 1 auto',
+        padding: '0.375rem',
+        borderRadius: '16px',
       },
     },
   },

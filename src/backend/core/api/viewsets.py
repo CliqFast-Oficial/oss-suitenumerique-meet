@@ -70,6 +70,7 @@ from core.services.lobby import (
     LobbyParticipantNotFound,
     LobbyService,
 )
+from core.services.notes import NotesException, NotesService
 from core.services.participants_management import (
     ParticipantNotFoundException,
     ParticipantsManagement,
@@ -666,6 +667,47 @@ class RoomViewSet(
                 status=drf_status.HTTP_500_INTERNAL_SERVER_ERROR,
             )
 
+        return drf_response.Response(
+            {"status": "success"}, status=drf_status.HTTP_200_OK
+        )
+
+    @decorators.action(
+        detail=True,
+        methods=["post"],
+        url_path="start-notes",
+        permission_classes=[permissions.IsAuthenticated],
+    )
+    def start_notes(self, request, pk=None):  # pylint: disable=unused-argument
+        """Liga as anotações (Reunião CliqFast): só quem entrou com conta da equipe."""
+        if not settings.NOTES_ENABLED:
+            return drf_response.Response(
+                {"error": "Anotações desligadas neste servidor."},
+                status=drf_status.HTTP_404_NOT_FOUND,
+            )
+        room = self.get_object()
+        try:
+            notes = NotesService().start(room, request.user)
+        except NotesException as error:
+            return drf_response.Response(
+                {"error": str(error)}, status=drf_status.HTTP_409_CONFLICT
+            )
+        return drf_response.Response(notes, status=drf_status.HTTP_200_OK)
+
+    @decorators.action(
+        detail=True,
+        methods=["post"],
+        url_path="stop-notes",
+        permission_classes=[permissions.IsAuthenticated],
+    )
+    def stop_notes(self, request, pk=None):  # pylint: disable=unused-argument
+        """Desliga as anotações: o anotador entrega o que ouviu e sai."""
+        room = self.get_object()
+        try:
+            NotesService().stop(room)
+        except NotesException as error:
+            return drf_response.Response(
+                {"error": str(error)}, status=drf_status.HTTP_409_CONFLICT
+            )
         return drf_response.Response(
             {"status": "success"}, status=drf_status.HTTP_200_OK
         )

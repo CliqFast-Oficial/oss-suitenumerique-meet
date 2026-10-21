@@ -60,6 +60,38 @@ const config: Config = {
         },
       },
       fade: { from: { opacity: 0 }, to: { opacity: 1 } },
+      // Reunião CliqFast: entradas, o quadro de chamada da página inicial, a faixa de anotações e o ponto que pulsa.
+      cfRise: {
+        from: { opacity: 0, transform: 'translateY(14px)' },
+        to: { opacity: 1, transform: 'translateY(0)' },
+      },
+      cfFloat: {
+        '0%, 100%': { transform: 'translateY(0)' },
+        '50%': { transform: 'translateY(-6px)' },
+      },
+      cfRing: {
+        '0%': { boxShadow: '0 0 0 3px rgba(45, 205, 159, 1)' },
+        '70%': { boxShadow: '0 0 0 12px rgba(45, 205, 159, 0)' },
+        '100%': { boxShadow: '0 0 0 3px rgba(45, 205, 159, 1)' },
+      },
+      cfBars: {
+        from: { transform: 'scaleY(0.35)' },
+        to: { transform: 'scaleY(1)' },
+      },
+      cfType: {
+        '0%': { transform: 'scaleX(0)', opacity: 1 },
+        '35%, 80%': { transform: 'scaleX(1)', opacity: 1 },
+        '100%': { transform: 'scaleX(1)', opacity: 0 },
+      },
+      cfBannerIn: {
+        from: { opacity: 0, transform: 'translate(-50%, -8px)' },
+        to: { opacity: 1, transform: 'translate(-50%, 0)' },
+      },
+      cfPulse: {
+        '0%': { boxShadow: '0 0 0 0 rgba(45, 205, 159, 0.6)' },
+        '70%': { boxShadow: '0 0 0 8px rgba(45, 205, 159, 0)' },
+        '100%': { boxShadow: '0 0 0 0 rgba(45, 205, 159, 0)' },
+      },
       pulse: {
         '0%': { boxShadow: '0 0 0 0 rgba(255, 255, 255, 0.7)' },
         '75%': { boxShadow: '0 0 0 30px rgba(255, 255, 255, 0)' },
@@ -126,34 +158,48 @@ const config: Config = {
       ...pandaPreset.theme.tokens,
       colors: defineTokens.colors({
         ...pandaPreset.theme.tokens.colors,
+        // Reunião CliqFast: dentro da sala, marinho profundo; selecionado em verde-menta com texto marinho.
         primaryDark: {
-          50: { value: '#161622' },
-          75: { value: '#222234' },
-          100: { value: '#2D2D46' },
-          200: { value: '#43436A' },
-          300: { value: '#5A5A8F' },
-          400: { value: '#7070B3' },
-          500: { value: '#8787D7' },
-          600: { value: '#9D9DDF' },
-          700: { value: '#B3B3E7' },
-          800: { value: '#C9C9EE' },
-          900: { value: '#DFDFF6' },
-          950: { value: '#F5F5FE' },
-          action: { value: '#C1C1FB' },
+          50: { value: '#050d22' },
+          75: { value: '#0a1630' },
+          100: { value: '#0f2045' },
+          200: { value: '#16305f' },
+          300: { value: '#1e3c75' },
+          400: { value: '#2f55a0' },
+          500: { value: '#5e80c8' },
+          600: { value: '#8aa5dc' },
+          700: { value: '#2dcd9f' },
+          800: { value: '#7fe6c8' },
+          900: { value: '#cff9e8' },
+          950: { value: '#ebfdf6' },
+          action: { value: '#67e3bb' },
         },
+        // Azul-marinho da CliqFast (frontend/src/app/globals.css do produto).
         primary: {
-          50: { value: '#F5F5FE' },
-          100: { value: '#ECECFE' },
-          200: { value: '#E3E3FB' },
-          300: { value: '#CACAFB' },
-          400: { value: '#8585F6' },
-          500: { value: '#6A6AF4' },
-          600: { value: '#313178' },
-          700: { value: '#272747' },
-          800: { value: '#000091' },
-          900: { value: '#21213F' },
-          950: { value: '#1B1B35' },
-          action: { value: '#1212FF' },
+          50: { value: '#eff4ff' },
+          100: { value: '#dbe6fe' },
+          200: { value: '#bed2fe' },
+          300: { value: '#92b4fd' },
+          400: { value: '#5e8bfa' },
+          500: { value: '#3b66f6' },
+          600: { value: '#2547eb' },
+          700: { value: '#1d36d8' },
+          800: { value: '#012461' },
+          900: { value: '#011a46' },
+          950: { value: '#010f2b' },
+          action: { value: '#012461' },
+        },
+        // Verde-menta da CliqFast (destaque: falando, anotando, selecionado).
+        mint: {
+          50: { value: '#ebfdf6' },
+          100: { value: '#cff9e8' },
+          200: { value: '#a3f1d4' },
+          300: { value: '#67e3bb' },
+          400: { value: '#2dcd9f' },
+          500: { value: '#01bd8c' },
+          600: { value: '#009672' },
+          700: { value: '#00785e' },
+          800: { value: '#045f4c' },
         },
         greyscale: {
           '000': { value: '#FFFFFF' },
@@ -195,21 +241,21 @@ const config: Config = {
       fonts: {
         sans: {
           value: [
+            '"Onest Variable"',
             'ui-sans-serif',
             'system-ui',
             '-apple-system',
             'BlinkMacSystemFont',
             '"Segoe UI"',
             'Roboto',
-            '"Helvetica Neue"',
-            'Arial',
-            '"Noto Sans"',
             'sans-serif',
             '"Apple Color Emoji"',
             '"Segoe UI Emoji"',
-            '"Segoe UI Symbol"',
             '"Noto Color Emoji"',
           ],
+        },
+        heading: {
+          value: ['"Sora Variable"', '"Onest Variable"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         },
         serif: {
           value: [
@@ -252,10 +298,13 @@ const config: Config = {
       shadows: {
         sm: {
           value: [
-            '0 1px 3px 0 rgb(0 0 0 / 0.1)',
-            '0 1px 2px -1px rgb(0 0 0 / 0.1)',
+            '0 1px 3px 0 rgb(1 36 97 / 0.08)',
+            '0 1px 2px -1px rgb(1 36 97 / 0.06)',
           ],
         },
+        md: { value: '0 6px 16px -4px rgb(1 36 97 / 0.14)' },
+        lg: { value: '0 18px 40px -12px rgb(1 36 97 / 0.24)' },
+        mint: { value: '0 8px 24px -8px rgb(1 189 140 / 0.45)' },
       },
       lineHeights: {
         1: { value: '1' },
@@ -265,11 +314,12 @@ const config: Config = {
         1.625: { value: '1.625' },
         2: { value: '2' },
       },
+      // Cantos da CliqFast (6, 10, 14 e 22 px no site), um pouco mais suaves que os do original.
       radii: {
-        4: { value: '0.25rem' },
-        6: { value: '0.375rem' },
-        8: { value: '0.5rem' },
-        16: { value: '1rem' },
+        4: { value: '0.5rem' },
+        6: { value: '0.625rem' },
+        8: { value: '0.875rem' },
+        16: { value: '1.375rem' },
         full: { value: '9999px' },
       },
       sizes: {
@@ -309,13 +359,13 @@ const config: Config = {
           subtle: { value: '{colors.gray.400}' },
         },
         primary: {
-          DEFAULT: { value: '{colors.blue.700}' },
-          hover: { value: '{colors.blue.800}' },
-          active: { value: '{colors.blue.900}' },
+          DEFAULT: { value: '{colors.primary.800}' },
+          hover: { value: '{colors.primary.900}' },
+          active: { value: '{colors.primary.950}' },
           text: { value: '{colors.white}' },
-          warm: { value: '{colors.blue.300}' },
-          subtle: { value: '{colors.blue.100}' },
-          'subtle-text': { value: '{colors.blue.700}' },
+          warm: { value: '{colors.primary.300}' },
+          subtle: { value: '{colors.primary.100}' },
+          'subtle-text': { value: '{colors.primary.800}' },
         },
         danger: {
           DEFAULT: { value: '{colors.red.600}' },
@@ -347,7 +397,7 @@ const config: Config = {
           subtle: { value: '{colors.amber.100}' },
           'subtle-text': { value: '{colors.amber.700}' },
         },
-        focusRing: { value: 'rgb(74, 121, 199)' },
+        focusRing: { value: '#2547eb' },
       },
       shadows: {
         box: { value: '{shadows.sm}' },
@@ -372,6 +422,8 @@ const config: Config = {
     textStyles: defineTextStyles({
       display: {
         value: {
+          fontFamily: 'heading',
+          letterSpacing: '-0.02em',
           fontSize: '3rem',
           lineHeight: '2rem',
           fontWeight: 700,
@@ -379,6 +431,8 @@ const config: Config = {
       },
       h1: {
         value: {
+          fontFamily: 'heading',
+          letterSpacing: '-0.02em',
           fontSize: '1.5rem',
           lineHeight: '2rem',
           fontWeight: 700,
@@ -386,6 +440,8 @@ const config: Config = {
       },
       h2: {
         value: {
+          fontFamily: 'heading',
+          letterSpacing: '-0.02em',
           fontSize: '1.25rem',
           lineHeight: '1.75rem',
           fontWeight: 700,

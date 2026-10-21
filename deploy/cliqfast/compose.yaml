@@ -78,6 +78,22 @@ services:
       frontend:
         condition: service_started
 
+  # Anotador (src/agents/anotador.py): entra na sala quando alguém liga "Anotar a reunião" e manda só as falas para a
+  # CliqGestão, direto na API dela pela rede interna (GESTAO_NOTES_URL=http://api:8000/integracoes/meet/anotacoes).
+  anotador:
+    build:
+      context: ../../src/agents
+      dockerfile: Dockerfile
+      target: production
+      args:
+        DOCKER_USER: "1000"
+    image: cliqfast/meet-anotador:local
+    command: ["python", "anotador.py", "start"]
+    restart: unless-stopped
+    env_file: [../../../config/.env]
+    mem_limit: 768m
+    networks: [default, edge]
+
   # pg_dump diário (BACKUP_HOUR, UTC) guardando os últimos BACKUP_KEEP_DAYS dias no volume meet-backups.
   backup:
     image: postgres:16-alpine

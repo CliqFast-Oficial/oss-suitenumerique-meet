@@ -60,8 +60,15 @@ const styles = {
     minWidth: 0,
     width: '100%',
   }),
+  // Reunião CliqFast: prévia em cartão marinho com sombra da marca e entrada suave; o lado do nome em cartão branco.
   previewFrame: css({
-    borderRadius: '1rem',
+    borderRadius: '22px',
+    boxShadow:
+      '0 30px 60px -28px rgba(1, 26, 70, 0.55), 0 0 0 1px rgba(1, 36, 97, 0.08)',
+    _motionSafe: {
+      opacity: 0,
+      animation: 'cfRise 600ms cubic-bezier(0.23, 1, 0.32, 1) forwards',
+    },
     minWidth: { base: 0, sm: '320px' },
     maxWidth: '100%',
     margin: { base: '0.5rem', sm: '1rem', lg: '1rem 0.5rem 1rem 1rem' },
@@ -95,7 +102,7 @@ const styles = {
     aspectRatio: '16 / 9',
   }),
   previewSurface: css({
-    backgroundColor: 'black',
+    backgroundColor: '#011a46',
     position: 'absolute',
     boxSizing: 'border-box',
     top: 0,
@@ -175,9 +182,19 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    flex: '0 0 360px',
+    flex: '0 0 380px',
     position: 'relative',
     margin: '1rem 1rem 1rem 0.5rem',
+    padding: '1.75rem 1.5rem',
+    borderRadius: '22px',
+    background: 'white',
+    border: '1px solid',
+    borderColor: 'primary.100',
+    boxShadow: 'lg',
+    _motionSafe: {
+      opacity: 0,
+      animation: 'cfRise 600ms cubic-bezier(0.23, 1, 0.32, 1) 120ms forwards',
+    },
   }),
   effectsTitle: css({
     textStyle: 'h1',

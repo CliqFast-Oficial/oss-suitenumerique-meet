@@ -20,8 +20,9 @@ const StyledAvatarWrapper = styled('div', {
     aspectRatio: '1 / 1',
     width: 'min(90cqmin, 160px)',
     fontSize: 'min(27cqmin, 48px)',
+    // Reunião CliqFast: quem fala ganha o anel verde-menta que pulsa.
     '[data-lk-speaking="true"] &': {
-      animation: 'pulse 1s infinite',
+      animation: 'cfRing 1.4s ease-out infinite',
     },
   },
 })

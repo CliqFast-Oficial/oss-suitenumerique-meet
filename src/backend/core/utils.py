@@ -53,9 +53,10 @@ def generate_color(identity: str) -> str:
     # Keep only hash's last 16 bits, collisions are not a concern
     seed = int(identity_hash.hexdigest(), 16) & 0xFFFF
     random.seed(seed)
-    hue = random.randint(0, 360)
-    saturation = random.randint(50, 75)
-    lightness = random.randint(25, 60)
+    # Reunião CliqFast: só tons da família da marca (azuis e verdes), escuros o bastante para o texto branco.
+    hue = random.choice((152, 168, 186, 200, 214, 222, 230))
+    saturation = random.randint(55, 72)
+    lightness = random.randint(28, 42)
 
     return f"hsl({hue}, {saturation}%, {lightness}%)"
 

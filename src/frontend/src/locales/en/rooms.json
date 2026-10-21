@@ -304,6 +304,10 @@
         "party-popper": "party popper",
         "folded-hands": "folded hands"
       }
+    },
+    "notes": {
+      "start": "Take meeting notes",
+      "stop": "Stop notes"
     }
   },
   "pictureInPicture": {
@@ -825,5 +829,12 @@
   },
   "participantTile": {
     "screenShare": "{{name}}'s screen"
+  },
+  "notesBanner": {
+    "on": "Taking notes · started by {{name}}",
+    "someone": "a team member",
+    "stop": "Stop",
+    "sent": "Notes stopped: the minutes will reach CliqGestão and your inbox in a few minutes.",
+    "error": "Could not change notes right now. Try again."
   }
 }
